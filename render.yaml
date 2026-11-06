@@ -1,0 +1,18 @@
+# اختیاری: با «Blueprint» در Render تنظیمات سرویس به‌صورت خودکار پر می‌شود. مقادیر محرمانه را خودتان در Render وارد می‌کنید.
+services:
+  - type: web
+    name: my-track
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: APP_USERNAME
+        sync: false
+      - key: APP_PASSWORD
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
